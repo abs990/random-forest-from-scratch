@@ -140,8 +140,15 @@ def bootstrap_sample(features, labels, rng):
     indices = rng.integers(0, features.shape[0], size=features.shape[0])
     return features[indices], labels[indices]
 
-# Step 11 - feature_subset (not yet solved)
-# TODO: implement
+# Step 11 - feature_subset
+import numpy as np
+
+def feature_subset(num_features, num_to_pick, rng):
+    # return num_to_pick distinct random feature indices from range(num_features) using rng.
+    if num_to_pick >= 1 and num_to_pick <= num_features:
+        return rng.choice(num_features, size=num_to_pick, replace=False)
+    else:
+        return np.array([], dtype=int)
 
 # Step 12 - train_forest (not yet solved)
 # TODO: implement
