@@ -27,8 +27,11 @@ def split_dataset(features, labels, feature_index, threshold):
 
     return features[mask], labels[mask], features[~mask], labels[~mask]
 
-# Step 3 - split_score (not yet solved)
-# TODO: implement
+# Step 3 - split_score
+def split_score(parent_labels, left_labels, right_labels):
+    # return a score where higher means the children are purer than the parent.
+    
+    return impurity(parent_labels) - (len(left_labels) * impurity(left_labels) + len(right_labels) * impurity(right_labels)) / len(parent_labels)
 
 # Step 4 - best_split (not yet solved)
 # TODO: implement
